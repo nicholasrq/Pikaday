@@ -108,6 +108,12 @@
         return to;
     },
 
+    indexOf = Array.prototype.indexOf || (function(item){
+        var i = this.length;
+        while(--i > -1){ if(this[i] == item) return i; }
+        return -1;
+    }),
+
 
     /**
      * defaults and localisation
@@ -139,6 +145,9 @@
 
         // number of years either side, or array of upper/lower range
         yearRange: 10,
+
+        // list of disabled dates
+        disabledDates: [],
 
         // used internally (don't config outside)
         minYear: 0,
@@ -688,8 +697,9 @@
             cells += 7 - after;
             for (var i = 0, r = 0; i < cells; i++)
             {
+
                 var day = new Date(year, month, 1 + (i - before)),
-                    isDisabled = (opts.minDate && day < opts.minDate) || (opts.maxDate && day > opts.maxDate),
+                    isDisabled = (opts.minDate && day < opts.minDate) || (opts.maxDate && day > opts.maxDate) || (indexOf.call(opts.disabledDates, day.toString()) >= 0),
                     isSelected = isDate(this._d) ? compareDates(day, this._d) : false,
                     isToday = compareDates(day, now),
                     isEmpty = i < before || i >= (days + before);
