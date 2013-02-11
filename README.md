@@ -75,6 +75,7 @@ Pikaday has many useful options:
 * `bound` automatically show/hide the datepicker on `field` focus (default `true` if `field` is set)
 * `format` the default output format for `.toString()` and `field` value (requires [Moment.js](http://momentjs.com/) for advanced formatting)
 * `defaultDate` the initial date to view when first opened
+* `disabeledDates` array of disabled dates in format like so `Tue Feb 12 2013 02:37:32 GMT+0400 (MSK)`
 * `setDefaultDate` make the `defaultDate` the initial selected value
 * `firstDay` first day of the week (0: Sunday, 1: Monday, etc)
 * `minDate` the minimum/earliest date that can be selected (this should be a native Date object - e.g. `new Date()` or `moment().toDate()`)
