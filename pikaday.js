@@ -164,7 +164,7 @@
         i18n: {
 
                 months        : ['January','February','March','April','May','June','July','August','September','October','November','December'],
-                //monthsShort   : ['Jan_Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                monthsShort   : ['Jan_Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
                 weekdays      : ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
                 weekdaysShort : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
         },
